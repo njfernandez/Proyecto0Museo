@@ -147,8 +147,12 @@
         
         
         <!-- Footer-->
-        <footer class="bg-light py-5">
+        <footer class="bg-light py-5" styles="Max-heidth:100%;">
             <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - Company Name</div></div>
+
+            <a href="https://www.facebook.com" target="_blank"  styles=" width: 15%;"><img src="./assets/img/facebook.png" alt="facebook" class="img" id="contacto"></a>
+            <a href="https://www.whatsapp.com" target="_blank"><img src="./assets/img/whatsapp.png" alt="whatsapp" class="img" id="contacto"></a>
+            <a href="https://instagram.com=" target="_blank"><img src="./assets/img/instagram.png" alt="instagram" class="img" id="contacto"><a>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
