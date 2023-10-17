@@ -14,8 +14,8 @@
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#about">Acerca de</a></li>
                         <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portafolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./form_ingresar.php">ingresar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contacto.php">Contacto</a></li>
                     </ul>
                 </div>
             </div>

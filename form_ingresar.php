@@ -6,10 +6,25 @@
 
    ?>
 <body>
-      
+<header>
+<nav class="navbar  bg-dark navbar-expand-lg navbar-light fixed-top py-3" style="position:absolute;" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="./index.php">proyecto</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#about">Acerca de</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./form_ingresar.php">ingresar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contacto.php">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</header>
 
 
-  <section>
+  <section  class="page-section">
    
   
    <div class="container mt-2 mb-5">
@@ -27,15 +42,7 @@
      <input type="password" class="form-control" name="clave" id="clave" placeholder="Ingresa una contraseña de 8 caracteres como mínimo">
    </div>    
 
-   <div class="col-sm-6 mb-3">
-       <label for="perfil" class="form-label">*Perfil</label>
-       <select name="perfil" class="form-control">
-       <option disabled selected>seleccione su perfil</option>
-       <option >cliente</option>
-       <option >administrador</option>
-       </select>
-       
-   </div>
+  
 
    <div class="col-12 text-center">
    <button type="submit" class="btn btn-primary" name="btn_ingresar" id="btn_ingresar">ingresar</button>
