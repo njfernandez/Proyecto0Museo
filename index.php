@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION['dnicli']) ){
+  header("location:cliente.php");
+} else if(isset($_SESSION['dniadmin'])) { 
+  header("location:administrador.php");
+ }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <?php
@@ -7,20 +15,12 @@
    ?>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="./index.php">proyecto</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#about">nose</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">eventos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./form_ingresar.php">ingresar</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./contacto.php">Contacto</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <?php
+     
+     include('header.php');
+
+   ?>
+       
         <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5 h-100">
