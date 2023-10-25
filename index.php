@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION['dnicli']) ){
+  header("location:cliente.php");
+} else if(isset($_SESSION['dniadmin'])) { 
+  header("location:administrador.php");
+ }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <?php
@@ -7,20 +15,12 @@
    ?>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Museo</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#about">Exposiciones</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">eventos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">ingresar</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./contacto.php">Contacto</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <?php
+     
+     include('header.php');
+
+   ?>
+       
         <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5 h-100">
@@ -141,7 +141,6 @@
             <div class="container px-4 px-lg-5 text-center">
                 <h2 class="mb-4">redes sociales!</h2>
                 <a class="btn btn-light btn-xl" href="#">se lo dejo a ustedes compitas!</a>
-                
             </div>
         </section>
         <!-- Contact-->
@@ -149,7 +148,7 @@
         
         <!-- Footer-->
         <footer class="bg-light py-5">
-            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - Municipalidad de San Cristobal </div></div>
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - Company Name</div></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

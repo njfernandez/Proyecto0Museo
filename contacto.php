@@ -12,10 +12,10 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Acerca de</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./form_ingresar.php">ingresar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contacto.php">Contacto</a></li>
                     </ul>
                 </div>
             </div>
@@ -25,9 +25,9 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8 col-xl-6 text-center">
-                        <h2 class="mt-0">contactanos!</h2>
+                        <h2 class="mt-0">Contactanos!</h2>
                         <hr class="divider" />
-                        <p class="text-muted mb-5">preguntanos lo que quieras !!</p>
+                        <p class="text-muted mb-5">Preguntanos lo que quieras !!</p>
                     </div>
                 </div>
                 <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
@@ -43,27 +43,27 @@
                             <!-- Name input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">nombre completo</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">nombre requerido.</div>
+                                <label for="name">Nombre completo</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">Nombre requerido.</div>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
                                 <label for="email">gmail</label>
                                 <div class="invalid-feedback" data-sb-feedback="email:required">gmail requerido.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">tu gimail no es valido.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">El correo ingresado no es valido.</div>
                             </div>
                             <!-- Phone number input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">numero de telefono</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">numero es requerido.</div>
+                                <label for="phone">Número de telefono</label>
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">Ingrese su número.</div>
                             </div>
                             <!-- Message input-->
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">mensaje</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">el mensaje es requerido.</div>
+                                <label for="message">Mensaje</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">Ingrese su mensaje</div>
                             </div>
                             <!-- Submit success message-->
                             <!---->

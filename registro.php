@@ -29,7 +29,7 @@ if(!empty($_POST['dni']) && !empty($_POST['nombre']) &&
 
 
 
-            $sql="INSERT INTO usuario(dni,nombre,apellido,telefono,email,clave,	fecha_registro) VALUES('$dni','$nombre','$apellido','$telefono','$email','$clave','$fecha')";
+            $sql="INSERT INTO usuario(dni,nombre,apellido,telefono,email,clave,	fecha_de_alta) VALUES('$dni','$nombre','$apellido','$telefono','$email','$clave','$fecha')";
 
             $result=mysqli_query($conex,$sql);
             //die($sql);

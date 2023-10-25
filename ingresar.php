@@ -16,13 +16,13 @@ if(!empty($_POST['dni']) && !empty($_POST['clave']) && !empty($_POST['perfil']))
         
         $dni= $_POST['dni'];
         $clave = $_POST['clave'];
-        $tipo_de_usuario=$_POST['perfil'];
+        $tipo_usuario=$_POST['perfil'];
 
            
 
 
 
-            $sql="SELECT dni,clave,tipo_de_usuario,nombre,apellido FROM usuario where(dni='$dni') and (clave='$clave') and (tipo_de_usuario='$tipo_de_usuario')";
+            $sql="SELECT dni,clave,tipo_usuario,nombre,apellido FROM usuario where(dni='$dni') and (clave='$clave') and (tipo_usuario='$tipo_usuario')";
 
             $result=mysqli_query($conex,$sql);
            // die($sql);
@@ -30,7 +30,7 @@ if(!empty($_POST['dni']) && !empty($_POST['clave']) && !empty($_POST['perfil']))
             if (mysqli_num_rows($result)==1){
 
                 $fila=mysqli_fetch_array($result);
-                if ($fila['tipo_de_usuario']=="cliente"){
+                if ($fila['tipo_usuario']=="cliente"){
 
                   $_SESSION['dnicli']=$fila['dni'];
               //  echo $_SESSION['dnicli'];
@@ -41,7 +41,7 @@ if(!empty($_POST['dni']) && !empty($_POST['clave']) && !empty($_POST['perfil']))
 
                   header("Location:cliente.php");
 
-                }else if($fila['tipo_de_usuario']=="administrador"){
+                }else if($fila['tipo_usuario']=="administrador"){
 
                   $_SESSION['dniadmin']=$fila['dni'];
                   //  echo $_SESSION['dnicli'];

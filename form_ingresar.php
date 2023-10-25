@@ -41,6 +41,16 @@
      <label for="clave" class="form-label">* Contraseña</label>
      <input type="password" class="form-control" name="clave" id="clave" placeholder="Ingresa una contraseña de 8 caracteres como mínimo">
    </div>    
+   
+   <div class="col-sm-6 mb-3">
+       <label for="perfil" class="form-label">*Perfil</label>
+       <select name="perfil" class="form-control">
+       <option disabled selected>seleccione su perfil</option>
+       <option >cliente</option>
+       <option >administrador</option>
+       </select>
+       
+   </div>
 
   
 
