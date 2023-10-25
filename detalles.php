@@ -1,6 +1,7 @@
 <?php
 require_once "conexion.php";
-$sql="SELECT * FROM `pieza` ORDER BY id";
+$id = $_POST["id"];
+$sql="SELECT * FROM `pieza` WHERE id = $id ORDER BY id";
 $result=mysqli_query($conex,$sql);
 ?>
 
@@ -63,9 +64,9 @@ $result=mysqli_query($conex,$sql);
                        
                         <div class="card mb-4">
                             <div class="card-body">
-                                DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
-                                <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
-                                .
+                            </th>
+                Volver al listado original<a class="btn btn-primary btn-sm ms-2" href="listado.php" role="button">Volver</a>
+                                
                             </div>
                         </div>
                         <div class="card mb-4">
@@ -106,8 +107,7 @@ $result=mysqli_query($conex,$sql);
                 </th>
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
                     <a href="#" class="datatable">Imagen</a>
-                </th>
-             
+  
               
               
             

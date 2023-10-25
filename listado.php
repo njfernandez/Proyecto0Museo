@@ -49,7 +49,7 @@ $result=mysqli_query($conex,$sql);
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                           
-                         
+        
                         </div>
                     </div>
                   
@@ -63,8 +63,8 @@ $result=mysqli_query($conex,$sql);
                        
                         <div class="card mb-4">
                             <div class="card-body">
-                                DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
-                                <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
+                                Solo las cuentas autorizadas a pueden acceder a este apartado y modificar las piezas
+                                <a class="btn btn-primary btn-sm mb-2" href="formAgregarPieza.php" role="button">Agregar</a>
                                 .
                             </div>
                         </div>
@@ -156,16 +156,22 @@ $result=mysqli_query($conex,$sql);
                -->
                <td>
                <div class="d-sm-inline-block">
-                <form action="form_editar.php" method="post">
-		          <input type="hidden" name="id" value="<?php echo $fila['idProducto'];?>">
+                <form action="formEditarPieza.php" method="post">
+		          <input type="hidden" name="id" value="<?php echo $fila["id"]; ?>">
 		          <button class="btn border btn-outline-success btn-sm" type="submit" name="btneditar" id="btneditar">Editar</button>
                 </form>
                 </div>
-               <div class="d-sm-inline-block"><form action="form_eliminar.php" method="post">
-		          <input type="hidden" name="id" value="<?php echo $fila['idProducto'];?>">
+               <div class="d-sm-inline-block"><form action="formEliminarPieza.php" method="post">
+		          <input type="hidden" name="id" value="<?php echo $fila["id"]; ?>">
 		          <button class="btn border btn-outline-danger btn-sm" type="submit" name="btnborrar" id="btnborrar">Borrar</button>
                 </form>
             </div>
+            <div class="d-sm-inline-block">
+                <form action="detalles.php" method="post">
+		          <input type="hidden" name="id" value="<?php echo $fila["id"]; ?>">
+		          <button class="btn border btn-outline-info btn-sm" type="submit" name="btndetalles" id="btndetalles">Detalles</button>
+                </form>
+                </div>
         </td>
                
                </tr>
