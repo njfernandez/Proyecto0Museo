@@ -59,7 +59,7 @@
  <option>Historia</option>
  <option>Arte</option>
  <option>Ciencia y Tecnologia</option>
- <option>animales</option>
+ <option>Animales</option>
  </select>
 </div>
 
