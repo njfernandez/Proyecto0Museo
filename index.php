@@ -108,7 +108,7 @@ if(isset($_SESSION['dnicli']) ){
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/ciencia.jpg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50"></div>
                                 <div class="project-name">Ciencia y Tecnologia</div>
