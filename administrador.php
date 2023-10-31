@@ -14,7 +14,7 @@ session_start();
      include('head.php');
 
    ?>
-<body>
+<body id="page-top">
  
 
 <?php
@@ -25,7 +25,7 @@ session_start();
 
   
 
-<section class="container text-center">
+<section class="container text-center" >
     
         <div class="border border-secondary ">
         <h1> acceso exclusivo para ADMINISTRADOR</h1>
