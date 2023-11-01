@@ -1,7 +1,9 @@
 <?php
+session_start();
 require_once "conexion.php";
 $id = $_POST["id"];
-$sql="SELECT * FROM `pieza` WHERE id = $id ORDER BY id";
+$sql="SELECT * FROM `piezas` ORDER BY idpiezas = $id
+ORDER BY piezas.idpiezas";
 $result=mysqli_query($conex,$sql);
 ?>
 
@@ -36,6 +38,7 @@ $result=mysqli_query($conex,$sql);
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!"><?php echo $_SESSION['nombreadmin']?></a></li>
                         <li><a class="dropdown-item" href="#!">Configuracion</a></li>
                         <li><a class="dropdown-item" href="#!">Actividad</a></li>
                         <li><hr class="dropdown-divider" /></li>
