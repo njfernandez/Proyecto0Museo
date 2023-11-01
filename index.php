@@ -143,6 +143,8 @@ if(isset($_SESSION['dnicli']) ){
             <div class="container px-4 px-lg-5 text-center">
                 <h2 class="mb-4">redes sociales!</h2>
                 <a class="btn btn-light btn-xl" href="#">se lo dejo a ustedes compitas!</a>
+
+                
             </div>
         </section>
         <!-- Contact-->
@@ -151,7 +153,14 @@ if(isset($_SESSION['dnicli']) ){
         <!-- Footer-->
         <footer class="bg-light py-5">
             <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - Company Name</div></div>
+        <div class="Contenedorfooter">
+            <a href="https://www.facebook.com" target="_blank"><img src="assets/img/facebook.png" alt="facebook" class="Contenedorfooter" id="contacto"></a>
+            <a href="https://www.whatsapp.com" target="_blank"><img src="assets/img/whatsapp.png" alt="whatsapp" class="Contenedorfooter" id="contacto"></a>
+            <a href="https://instagram.com" target="_blank"><img src="assets/img/instagram.png" alt="instagram" class="Contenedorfooter" id="contacto"><a>
+        </div>
+            
         </footer>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- SimpleLightbox plugin JS-->

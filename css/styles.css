@@ -79,16 +79,25 @@
   --bs-highlight-bg: #fff3cd;
 }
 
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
   }
+}
+
+.Contenedorfooter{
+  display: flex;
+  width: 50%;
+  
 }
 
 body {
