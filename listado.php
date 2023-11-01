@@ -146,18 +146,18 @@ $result=mysqli_query($conex,$sql);
                <td>
                <div class="d-sm-inline-block">
                 <form action="formEditarPieza.php" method="post">
-		          <input type="hidden" name="id" value="<?php echo $fila["id"]; ?>">
+		          <input type="hidden" name="id" value="<?php echo $fila["idpiezas"]; ?>">
 		          <button class="btn border btn-outline-success btn-sm" type="submit" name="btneditar" id="btneditar">Editar</button>
                 </form>
                 </div>
                <div class="d-sm-inline-block"><form action="formEliminarPieza.php" method="post">
-		          <input type="hidden" name="id" value="<?php echo $fila["id"]; ?>">
+		          <input type="hidden" name="id" value="<?php echo $fila["idpiezas"]; ?>">
 		          <button class="btn border btn-outline-danger btn-sm" type="submit" name="btnborrar" id="btnborrar">Borrar</button>
                 </form>
             </div>
             <div class="d-sm-inline-block">
                 <form action="detalles.php" method="post">
-		          <input type="hidden" name="id" value="<?php echo $fila["id"]; ?>">
+		          <input type="hidden" name="id" value="<?php echo $fila["idpiezas"]; ?>">
 		          <button class="btn border btn-outline-info btn-sm" type="submit" name="btndetalles" id="btndetalles">Detalles</button>
                 </form>
                 </div>
