@@ -2,8 +2,10 @@
 session_start();
 require_once "conexion.php";
 $id = $_POST["id"];
-$sql="SELECT * FROM `piezas` ORDER BY idpiezas = $id
-ORDER BY piezas.idpiezas";
+$sql="SELECT DISTINCT piezas.idpiezas, piezas.cantidad, piezas.Descripcion, categoriasgenerales.NombreCategoria,subcategorias.NombreSubCategoria
+FROM `piezas`,categoriasgenerales,subcategorias,usuarios,donantes
+WHERE piezas.CategoriasGenerales_idCategorias = categoriasgenerales.idCategorias && piezas.SubCategorias_idSubCategorias = subcategorias.idSubCategorias && piezas.usuarios_idusuario = usuarios.idusuario && piezas.idDonante = donantes.idDonante && piezas.idpiezas = $id";
+//die($sql);
 $result=mysqli_query($conex,$sql);
 ?>
 
@@ -40,9 +42,9 @@ $result=mysqli_query($conex,$sql);
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="#!"><?php echo $_SESSION['nombreadmin']?></a></li>
                         <li><a class="dropdown-item" href="#!">Configuracion</a></li>
-                        <li><a class="dropdown-item" href="#!">Actividad</a></li>
+                        <li><a class="dropdown-item" href="listado.php">listado</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Salir</a></li>
+                        <li><a class="dropdown-item" href="salir.php">Salir</a></li>
                     </ul>
                 </li>
             </ul>
@@ -103,13 +105,16 @@ $result=mysqli_query($conex,$sql);
                     <a href="#" class="datatable">ID</a>
                 </th>
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
-                    <a href="#" class="datatable">Descripción</a>
+                    <a href="#" class="datatable">cantidad</a>
                 </th>
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
-                    <a href="#" class="datatable">Observacion</a>
+                    <a href="#" class="datatable">descripción</a>
                 </th>
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
-                    <a href="#" class="datatable">Imagen</a>
+                    <a href="#" class="datatable">Categorias</a>
+                </th>
+                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
+                    <a href="#" class="datatable">Subcategoria</a>
   
               
               
@@ -130,9 +135,11 @@ $result=mysqli_query($conex,$sql);
         
                <tr>
                     
-               <th scope="row"><?php echo $fila["id"]; ?></th>
-                <td><?php echo $fila["descripcion"]; ?></td>
-               <td><?php echo $fila["observacion"]; ?></td>
+               <th scope="row"><?php echo $fila["idpiezas"]; ?></th>
+                <td><?php echo $fila["cantidad"]; ?></td>
+               <td><?php echo $fila["Descripcion"]; ?></td>
+               <td><?php echo $fila["NombreCategoria"]; ?></td>
+               <td><?php echo $fila["NombreSubCategoria"]; ?></td>
              
                <td>
                
