@@ -39,6 +39,15 @@ if(isset($_SESSION['dnicli']) ){
             </div>
         </header>
        
+
+        <div>
+            <h2>SEGUIR ESTAS NORMAS
+
+            </h2>
+            <P>
+            https://evemuseografia.com/2022/07/08/guia-basica-para-la-creacion-de-web-para-museo-local/
+            </P>
+        </div>
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container px-4 px-lg-5">
