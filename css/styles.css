@@ -603,6 +603,11 @@ progress {
   height: auto;
 }
 
+.section img{
+  width: 5%;
+        
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;

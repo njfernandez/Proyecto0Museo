@@ -35,7 +35,7 @@
   <div class="text-center mt-5 mb-2 text-primary"><h2>Agregar Pieza a la colección del Museo</h2></div>	
   <div class="text-secondary"><p><small>* Datos Obligatorio</small></p></div>
   	
-  <form class="row g-3" action="insertarDatosPieza.php" method="post" method="post" enctype="multipart/form-data">
+  <form class="row g-3" action="insertarDatosPieza.php" method="post"  enctype="multipart/form-data">
   
   <div class="col-sm-6 mb-3">
  
@@ -59,6 +59,7 @@
  <option>animales</option>
  </select>
 </div>
+
 
 <div  class="col-sm-6 mb-3">
   <label for="entrega" class="form-label"> *tipo de entrega</label>

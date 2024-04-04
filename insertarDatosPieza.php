@@ -41,7 +41,7 @@
        
  
           $sql="INSERT INTO `pieza` (`id`, `nombre`, `fecha_ingreso`, `clasificacion`, `tipo_de_entrega`, `estado`, `cantidad`, `descripcion`, `observacion`) VALUES (NULL, 'cuerno de unicornio', '2023-10-01', 'hueso', 'Donado', 'nuevo', '2', 'cuerpo de criatura magica del señor de los anillos', 'es rosa');";
- 
+ //INSERT INTO `piezas` (`idpiezas`, `nombreDePiezas`, `cantidad`, `FechaDeIngreso`, `Descripcion`, `CategoriasGenerales_idCategorias`, `SubCategorias_idSubCategorias`, `usuarios_idusuario`, `idDonante`) VALUES (NULL, 'Minotauros', '1', '2023-10-01', 'es Zood', '4', '1', '1', '1');
           $result=mysqli_query($conex,$sql);
          // die($sql);
           if ($result){

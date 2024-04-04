@@ -143,6 +143,9 @@ if(isset($_SESSION['dnicli']) ){
             <div class="container px-4 px-lg-5 text-center">
                 <h2 class="mb-4">redes sociales!</h2>
                 <a class="btn btn-light btn-xl" href="#">se lo dejo a ustedes compitas!</a>
+                <a href="https://www.facebook.com" target="_blank"><img src="assets/img/facebook.png" alt="facebook" class="section img" id=""></a>
+            <a href="https://www.whatsapp.com" target="_blank"><img src="assets/img/whatsapp.png" alt="whatsapp" class="section img" id=""></a>
+            <a href="https://instagram.com" target="_blank"><img src="assets/img/instagram.png" alt="instagram" class="section img" id=""><a>
             </div>
         </section>
         <!-- Contact-->
