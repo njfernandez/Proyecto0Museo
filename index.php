@@ -39,6 +39,15 @@ if(isset($_SESSION['dnicli']) ){
             </div>
         </header>
        
+
+        <div>
+            <h2>SEGUIR ESTAS NORMAS
+
+            </h2>
+            <P>
+            https://evemuseografia.com/2022/07/08/guia-basica-para-la-creacion-de-web-para-museo-local/
+            </P>
+        </div>
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container px-4 px-lg-5">
@@ -143,9 +152,14 @@ if(isset($_SESSION['dnicli']) ){
             <div class="container px-4 px-lg-5 text-center">
                 <h2 class="mb-4">redes sociales!</h2>
                 <a class="btn btn-light btn-xl" href="#">se lo dejo a ustedes compitas!</a>
+<<<<<<< HEAD
                 <a href="https://www.facebook.com" target="_blank"><img src="assets/img/facebook.png" alt="facebook" class="section img" id=""></a>
             <a href="https://www.whatsapp.com" target="_blank"><img src="assets/img/whatsapp.png" alt="whatsapp" class="section img" id=""></a>
             <a href="https://instagram.com" target="_blank"><img src="assets/img/instagram.png" alt="instagram" class="section img" id=""><a>
+=======
+
+                
+>>>>>>> 1f99bb1dc285fa30339b39da8ee0da9711c2534d
             </div>
         </section>
         <!-- Contact-->
@@ -154,7 +168,14 @@ if(isset($_SESSION['dnicli']) ){
         <!-- Footer-->
         <footer class="bg-light py-5">
             <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - Company Name</div></div>
+        <div class="Contenedorfooter">
+            <a href="https://www.facebook.com" target="_blank"><img src="assets/img/facebook.png" alt="facebook" class="Contenedorfooter" id="contacto"></a>
+            <a href="https://www.whatsapp.com" target="_blank"><img src="assets/img/whatsapp.png" alt="whatsapp" class="Contenedorfooter" id="contacto"></a>
+            <a href="https://instagram.com" target="_blank"><img src="assets/img/instagram.png" alt="instagram" class="Contenedorfooter" id="contacto"><a>
+        </div>
+            
         </footer>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- SimpleLightbox plugin JS-->
