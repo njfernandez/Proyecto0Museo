@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD:form_ingresar.php
+<?php
+     
+     include('head.php');
+     include('ojito.js');
+
+=======
+>>>>>>> 1f99bb1dc285fa30339b39da8ee0da9711c2534d:model/form_ingresar.php
 
      
 <body>
@@ -18,8 +26,8 @@
      <input type="text" class="form-control" name="dni" id="dni" placeholder="Ingresa DNI de 8 dígitos">
    </div>
    <div class="col-sm-6 mb-3">
-     <label for="clave" class="form-label">* Contraseña</label>
-     <input type="password" class="form-control" name="clave" id="clave" placeholder="Ingresa una contraseña de 8 caracteres como mínimo">
+     <label for="clave" class="form-label">* Contraseña </label> 
+     <input type="password"  class="form-control" name="clave" id="clave" placeholder="Ingresa una contraseña de 8 caracteres como mínimo"><button name="idojo" action="onclick" class="fas fa-eye-slash"></button><button name="idojo" action="onclick" class="fa-eye-slash"></button> <!--ACA TENGO Q PONER EL OJO--->
    </div>    
    
    <div class="col-sm-6 mb-3">

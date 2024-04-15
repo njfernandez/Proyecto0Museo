@@ -1,4 +1,5 @@
 <header>
+
      <!-- Encabezado -->       
 <nav class="navbar  bg-dark navbar-expand-lg navbar-light fixed-top py-3"  style="position:absolute;" id="mainNav" >
             <div class="container px-4 px-lg-5">
