@@ -2,11 +2,28 @@
 <?php
 require_once "conexion.php";
 $id = $_POST["id"];
-$sql="SELECT * FROM `pieza` WHERE id = $id";
+$sql="SELECT * 
+FROM piezas
+INNER JOIN categoriasgenerales CG on CG.idCategorias = piezas.CategoriasGenerales_idCategorias
+INNER JOIN subcategorias SC on SC.idSubCategorias = piezas.SubCategorias_idSubCategorias
+INNER JOIN usuarios US on US.idusuario = piezas.usuarios_idusuario
+INNER JOIN donantes DN on DN.idDonante =piezas.idDonante
+WHERE piezas.idpiezas = $id";
 //die($sql);  
 $result=mysqli_query($conex,$sql);
 $fila=mysqli_fetch_array($result);
+
+/*
+SELECT * 
+FROM piezas
+INNER JOIN categoriasgenerales CG on CG.idCategorias = piezas.CategoriasGenerales_idCategorias
+INNER JOIN subcategorias SC on SC.idSubCategorias = piezas.SubCategorias_idSubCategorias
+INNER JOIN usuarios US on US.idusuario = piezas.usuarios_idusuario
+INNER JOIN donantes DN on DN.idDonante =piezas.idDonante
+*/
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -32,88 +49,69 @@ $fila=mysqli_fetch_array($result);
             </div>
         </nav>
   <header>
-   <!-- Index.php contiene un Formulario para Agregar Socios--> 
+   <!-- Index.php contiene un Formulario para Agregar pieza--> 
 
    
  
   <section class="page-section" >
    
-  
   <div class="container mt-2 mb-5" >
   <div class="text-center mt-5 mb-2 text-success"><h2>Editar Pieza del Museo de Ciencias Naturales</h2></div>	
   <div class="text-secondary"><p><small>* Datos Obligatorios</small></p></div>
   	
   <form class="row g-3" action="editarPieza.php" method="post" method="post" enctype="multipart/form-data">
   
-  <input type="hidden" class="form-control" name="id" id="id" value="<?php echo $fila['id'];?>">
+  <input type="hidden" class="form-control" name="id" id="id" value="<?php echo $fila['idpieza'];?>">
   <div class="col-sm-6 mb-3">
  
     <label for="nombre" class="form-label">* Nombre de la pieza</label>
-    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresa de la pieza" value="<?php echo $fila["nombre"];?>" >
+    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresa de la pieza" value="<?php echo $fila["nombreDePiezas"];?>" >
   </div>
 
   
-  <div class="col-sm-6 mb-3">
-    <label for="fecha" class="form-label">* fecha ingreso</label>
-    <input type="date" class="form-control" name="fecha_ingreso" id="fecha_ingreso" placeholder="Ingresa fecha de alta de pieza" value="<?php echo $fila["fecha_ingreso"];?>" >
-  </div>
-
-  <div  class="col-sm-6 mb-3">
-  <label for="clasificación" class="form-label"> *clasificación</label>
- <select name="clasificación" class="form-control" value="<?php echo $fila['clasificacion'];?>" >
- <option>Arqueologia</option>
- <option>Historia</option>
- <option>Arte</option>
- <option>Ciencia y Tecnologia</option>
- <option>animales</option>
- </select>
-</div>
-
-<div  class="col-sm-6 mb-3">
-  <label for="entrega" class="form-label"> *tipo de entrega</label>
- <select name="entrega" class="form-control" value="<?php echo $fila['tipo_de_entrega'];?>" >
- <option>donado</option>
- <option>adquirido</option>
- </select>
-</div>
-
-<div  class="col-sm-6 mb-3">
-  <label for="Estado" class="form-label"> *Estado</label>
- <select name="Estado" class="form-control" value="<?php echo $fila['estado'];?>">
-
- <option>Nuevo</option>
- <option>Algo Desgastado</option>
- <option>Desgastado</option>
- <option>Muy Desgastado</option>
- <option>Roto</option>
- </select>
-</div>
-
-
   <div class="col-sm-6 mb-3">
     <label for="existencia" class="form-label"> *cantidad</label>
     <input type="number" class="form-control" name="cantidad" id="cantidad" placeholder="Ingresa cantidad" value="<?php echo $fila['cantidad'];?>">
   </div>
 
+
   
- <div class="col-sm-6 mb-3">
- 
-    <label for="nombre" class="form-label">*Observacion de los detalles</label>
-    <input type="text" class="form-control" name="Observacion" id="Observacion" placeholder="Imperfecciones o particularidades de la pieza" value="<?php echo $fila['descripcion'];?>" >
+  <div class="col-sm-6 mb-3">
+    <label for="fecha" class="form-label">* fecha ingreso</label>
+    <input type="date" class="form-control" name="FechaDeIngreso" id="FechaDeIngreso" placeholder="Ingresa fecha de alta de pieza" value="<?php echo $fila["FechaDeIngreso"];?>" >
   </div>
 
-  <div class="col-sm-6 mb-3">
- 
-    <label for="nombre" class="form-label">*Descripción</label>
-    <input type="text" class="form-control" name="Descripción" id="Descripción" placeholder="Descripción destinada a muestreo" value="<?php echo $fila['observacion'];?>" >
-  </div>
-  <!--
+<div class="col-sm-6 mb-3">
+ <label for="nombre" class="form-label">*Observacion de los detalles</label>
+ <input type="text" class="form-control" name="Descripcion" id="Descripcion" placeholder="Imperfecciones o particularidades de la pieza" value="<?php echo $fila['Descripcion'];?>" >
+</div>
 
-  <div class="col-sm-6 mb-3">
-    <label for="imagen">insertar imagen </label>
-  <input type="file" name="archivoimagen" id="archivoimagen" class="btn btn-primary btn-sm">
-  </div>s
-  -->
+
+<!-- Index.php contiene un Formulario para las claves foraneas--> 
+
+<div  class="col-sm-6 mb-3">
+  <label for="entrega" class="form-label"> *Categoria General</label>
+ <input type="text" class="form-control" name="subcategoria" id="subcategoria" placeholder="subcategoria" value="<?php echo $fila["CategoriasGenerales_idCategorias"];?>" >
+ </select>
+</div>
+
+<div class="col-sm-6 mb-3">
+    <label for="fecha" class="form-label">* Subcategoria</label>
+    <input type="text" class="form-control" name="subcategoria" id="subcategoria" placeholder="subcategoria" value="<?php echo $fila["SubCategorias_idSubCategorias"];?>" >
+</div>
+ 
+  
+<div class="col-sm-6 mb-3">
+    <label for="fecha" class="form-label">* Usuario</label>
+    <input type="text" class="form-control" name="subcategoria" id="subcategoria" placeholder="subcategoria" value="<?php echo $fila["usuarios_idusuario"];?>" >
+</div>
+
+<div class="col-sm-6 mb-3">
+    <label for="fecha" class="form-label">* Donante</label>
+    <input type="text" class="form-control" name="subcategoria" id="subcategoria" placeholder="subcategoria" value="<?php echo $fila["idDonante"];?>" >
+</div>
+
+
 
     
   <div class="col-12 text-center">

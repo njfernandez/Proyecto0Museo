@@ -3,9 +3,6 @@
 
 require_once "conexion.php";
 
-require_once "validarregistro.php";
-
-
 $error = "";
 
 

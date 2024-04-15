@@ -2,9 +2,7 @@
 session_start();
 require_once "conexion.php";
 $id = $_POST["id"];
-$sql="SELECT DISTINCT piezas.idpiezas, piezas.cantidad, piezas.Descripcion, categoriasgenerales.NombreCategoria,subcategorias.NombreSubCategoria
-FROM `piezas`,categoriasgenerales,subcategorias,usuarios,donantes
-WHERE piezas.CategoriasGenerales_idCategorias = categoriasgenerales.idCategorias && piezas.SubCategorias_idSubCategorias = subcategorias.idSubCategorias && piezas.usuarios_idusuario = usuarios.idusuario && piezas.idDonante = donantes.idDonante && piezas.idpiezas = $id";
+$sql=" = $id";
 //die($sql);
 $result=mysqli_query($conex,$sql);
 ?>
@@ -102,19 +100,19 @@ $result=mysqli_query($conex,$sql);
 
             <tr>
             <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
-                    <a href="#" class="datatable">ID</a>
+                    <a href="#" class="datatable">1</a>
                 </th>
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
-                    <a href="#" class="datatable">cantidad</a>
+                    <a href="#" class="datatable">2</a>
                 </th>
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
-                    <a href="#" class="datatable">descripción</a>
+                    <a href="#" class="datatable">3</a>
                 </th>
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
-                    <a href="#" class="datatable">Categorias</a>
+                    <a href="#" class="datatable">4</a>
                 </th>
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
-                    <a href="#" class="datatable">Subcategoria</a>
+                    <a href="#" class="datatable">5</a>
   
               
               
@@ -135,11 +133,11 @@ $result=mysqli_query($conex,$sql);
         
                <tr>
                     
-               <th scope="row"><?php echo $fila["idpiezas"]; ?></th>
-                <td><?php echo $fila["cantidad"]; ?></td>
-               <td><?php echo $fila["Descripcion"]; ?></td>
-               <td><?php echo $fila["NombreCategoria"]; ?></td>
-               <td><?php echo $fila["NombreSubCategoria"]; ?></td>
+               <th scope="row"><?php echo $fila[""]; ?></th>
+                <td><?php echo $fila[""]; ?></td>
+               <td><?php echo $fila[""]; ?></td>
+               <td><?php echo $fila[""]; ?></td>
+               <td><?php echo $fila[""]; ?></td>
              
                <td>
                
@@ -173,11 +171,11 @@ $result=mysqli_query($conex,$sql);
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                            <div class="text-muted">Copyright &copy; Museo de Ciencias Naturales 2023</div>
                             <div>
-                                <a href="#">Privacy Policy</a>
+                                <a href="#">Politicas de Privacidad </a>
                                 &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+
                             </div>
                         </div>
                     </div>
