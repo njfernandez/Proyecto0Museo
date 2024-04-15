@@ -1,64 +1,49 @@
 <?php
-session_start();
-//echo $_SESSION['dnicli'];
-//die();
- if(!isset($_SESSION['dniadmin'])){
-     header("location:index.php");
-    }
-
 ?>
 <!DOCTYPE html>
-<html lang="es">
-<?php
-     
-     include('head.php');
-
-   ?>
-<body id="page-top">
- 
-
-<?php
-     
-     include('header.php');
-
-   ?>
-
-  
-
-<section class="container text-center" >
-    
-        <div class="border border-secondary ">
-        <h1> acceso exclusivo para ADMINISTRADOR</h1>
-        <h2> BIENVENIDO/A SR/A ADMIN !!!!</h2>
-    </div>
-   
-    
-
-    
-
-    
-</section>
-
-
-
-
-
-
-<footer class="bg-light py-5">
-            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - Company Name</div></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla Estética con Bootstrap</title>
+  <!-- Agrega el enlace al archivo CSS de Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h2>Ejemplo de tabla estética con Bootstrap</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>John</td>
+          <td>Doe</td>
+          <td>john@example.com</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jane</td>
+          <td>Smith</td>
+          <td>jane@example.com</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Mike</td>
+          <td>Johnson</td>
+          <td>mike@example.com</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Agrega el enlace al archivo JavaScript de Bootstrap (opcional) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
