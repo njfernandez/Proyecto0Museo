@@ -1,10 +1,7 @@
 <?php
-session_start();
-require_once "conexion.php";
-$sql="SELECT piezas.*,usuarios.*,categoriasgenerales.*,subcategorias.*,donantes.*
-FROM `piezas`,categoriasgenerales,subcategorias,usuarios,donantes
-WHERE piezas.CategoriasGenerales_idCategorias = categoriasgenerales.idCategorias && piezas.SubCategorias_idSubCategorias = subcategorias.idSubCategorias && piezas.usuarios_idusuario = usuarios.idusuario && piezas.idDonante = donantes.idDonante
-ORDER BY piezas.idpiezas";
+
+require_once 'BD/conexion.php';
+$sql="SELECT * FROM `pieza`,donante WHERE Donante_idDonante = donante.idDonante";
 $result=mysqli_query($conex,$sql);
 ?>
 
@@ -103,19 +100,34 @@ $result=mysqli_query($conex,$sql);
 
 
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
-                    <a href="#" class="datatable">Nombre</a>
+                    <a href="#" class="datatable">ID</a>
                 </th>
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
-                    <a href="#" class="datatable">FechaDeIngreso</a>
+                    <a href="#" class="datatable">N° de Articulo</a>
                 </th>
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
-                    <a href="#" class="datatable">idDonante</a>
+                    <a href="#" class="datatable">Especie</a>
                 </th>
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
-                    <a href="#" class="datatable">idUsuarios</a>
+                    <a href="#" class="datatable">Estado</a>
                 </th>
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
-                    <a href="#" class="datatable">Acciones</a>
+                    <a href="#" class="datatable">Fecha</a>
+                </th>
+                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
+                    <a href="#" class="datatable">Cantidad</a>
+                </th>
+                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
+                    <a href="#" class="datatable">clasificacion</a>
+                </th>
+                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
+                    <a href="#" class="datatable">Observacion</a>
+                </th>
+                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
+                    <a href="#" class="datatable">Donante</a>
+                </th>
+                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
+                    <a href="#" class="datatable">Accion</a>
                 </th>
                
             
@@ -135,10 +147,15 @@ $result=mysqli_query($conex,$sql);
         
                <tr>
                     
-               <th scope="row"><?php echo $fila["nombreDePiezas"]; ?></th>
-               <td><?php echo $fila["FechaDeIngreso"]; ?></td>
-               <td><?php echo $fila["idDonante"]; ?></td>
-               <td><?php echo $fila["usuarios_idusuario"]; ?></td>
+               <th scope="row"><?php echo $fila["idPieza"]; ?></th>
+               <td><?php echo $fila["num_inventario"]; ?></td>
+               <td><?php echo $fila["especie"]; ?></td>
+               <td><?php echo $fila["estado_conservacion"]; ?></td>
+               <td><?php echo $fila["fecha_ingreso"]; ?></td>
+               <td><?php echo $fila["cantidad de piezas"]; ?></td>
+               <td><?php echo $fila["clasificacion"]; ?></td>
+               <td><?php echo $fila["observacion"]; ?></td>
+               <td><?php echo $fila["Donante_idDonante"]; ?></td>
                <!--
                 <td><?php //echo $fila["descripcion"]; ?></td>
                <td><?php //echo $fila["observacion"]; ?></td>
