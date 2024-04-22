@@ -52,8 +52,8 @@ $result=mysqli_query($conex,$sql);
                        
                         <div class="card mb-4">
                             <div class="card-body">
-                                Solo las cuentas autorizadas a pueden acceder a este apartado y modificar las piezas
-                                <a class="btn btn-primary btn-sm mb-2" href="formAgregarPieza.php" role="button">Agregar</a>
+                                Solo las cuentas autorizadas a pueden acceder a este apartado y modificar las usuarios
+                                <a class="btn btn-primary btn-sm mb-2" href="form_registro.php" role="button">Agregar</a>
                                 .
                             </div>
                         </div>
@@ -72,61 +72,46 @@ $result=mysqli_query($conex,$sql);
 </div>
         <table class="datatable-table">
         <div class="row ">
-            <div class="col-9"
-            ></div>
+            <div class="col-9"></div>
 
         
              </div>
-
-         
-           
-             
+       
             <thead>
-
             <tr>
-
-
-                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
+                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 1.30835734870317%;">
                     <a href="#" class="datatable">ID</a>
                 </th>
-                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
+                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 1.30835734870317%;">
                     <a href="#" class="datatable">DNI</a>
                 </th>
-                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
+                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 1.30835734870317%;">
                     <a href="#" class="datatable">nombre</a>
                 </th>
-                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
+                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 1.30835734870317%;">
                     <a href="#" class="datatable">apellido</a>
                 </th>
-                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
+                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 1.30835734870317%;">
                     <a href="#" class="datatable">email</a>
                 </th>
-                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
+                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 1.30835734870317%;">
                     <a href="#" class="datatable">clave</a>
                 </th>
-                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
+                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 1.30835734870317%;">
                     <a href="#" class="datatable">fecha_alta</a>
                 </th>
-                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
+                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 1.30835734870317%;">
                     <a href="#" class="datatable">Accion</a>
                 </th>
-            
-            
-               
             </thead>
-        
             <?php
                if (mysqli_num_rows($result)>0){
             ?>
-
             <tbody>
-
             <?php
 
                 While ($fila=mysqli_fetch_array($result)){
-    
             ?>
-        
                <tr>
                     
                <th scope="row"><?php echo $fila["idUsuario"]; ?></th>

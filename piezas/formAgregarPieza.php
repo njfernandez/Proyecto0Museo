@@ -1,147 +1,113 @@
-
 <!DOCTYPE html>
-<html lang="es">
-<?php
-     session_start();
-     include('head.php');
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Estético</title>
+  <!-- Enlace a Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos personalizados -->
 
-   ?>
+</head>
 <body>
- <header>
-<nav class="navbar  bg-dark navbar-expand-lg navbar-light fixed-top py-3 shadow" style="position:absolute;" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="./index.php">proyecto</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                    <li><a class="dropdown-item" href="#!"><?php echo $_SESSION['nombreadmin']?></a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">Acerca de</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portafolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-  <header>
-   <!-- Index.php contiene un Formulario para Agregar Socios--> 
+<style>
 
-   
- 
-  <section class="page-section" >
-   
   
-  <div class="container mt-2 mb-5" >
-  <div class="text-center mt-5 mb-2 text-primary"><h2>Agregar Pieza a la colección del Museo</h2></div>	
-  <div class="text-secondary"><p><small>* Datos Obligatorio</small></p></div>
-  	
-  <form class="row g-3" action="insertarDatosPieza.php" method="post"  enctype="multipart/form-data">
-  
-  <div class="col-sm-6 mb-3">
- 
-    <label for="nombre" class="form-label">* Nombre de la pieza</label>
-    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresa de la pieza" required>
+body {
+      background: #fc4a1a;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    .form-container {
+      background-color: #3C3B3F; /* Negro */
+      color: #FFFFFF; /* Blanco */
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .form-container input[type="text"] {
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid #FFFFFF; /* Blanco */
+      color: #FFFFFF; /* Blanco */
+    }
+    .form-container input[type="text"]::placeholder {
+      color: #FFFFFF; /* Blanco */
+    }
+    .form-container input[type="text"]:focus {
+      outline: none;
+      border-bottom-color: #FEC601; /* Naranja */
+    }
+    .form-container input[type="submit"] {
+      background-color: #FEC601; /* Naranja */
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: #FFFFFF; /* Negro */
+      cursor: pointer;
+    }
+    .form-container input[type="submit"]:hover {
+      background-color: #FFA500; /* Naranja oscuro */
+    }
+    
+
+</style>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-sm-6 col-6 mb-3">
+      <div class="form-container">
+        <form>
+          <!---->
+          <div class="form-group">
+            <label for="nombre">Numero de inventario:</label>
+            <input type="text" class="form-control" name="numero_inventario" id="numero_inventario" placeholder="#">
+          </div>
+          <!---->
+          <div class="form-group">
+            <label for="email">Especie:</label>
+            <input type="text" class="form-control" name="especie" id="especie" placeholder="especie">
+          </div>
+          <!---->
+          <div class="form-group">
+            <label for="mensaje">Estado de conservacion:</label>
+            <input type="text" class="form-control" name="estado" id="mensaje" placeholder="estado">
+          </div>
+          <!---->
+          <div class="form-group">
+            <label for="mensaje">Fecha de ingreso:</label>
+            <input type="text" class="form-control" name="fecha" id="mensaje" placeholder="Fecha">
+          </div>
+          <!---->
+          <div class="form-group">
+            <label for="mensaje">Cantidad de piezas:</label>
+            <input type="text" class="form-control" name="cantidad" id="mensaje" placeholder="Cantidad">
+          </div>
+          <!---->
+          <div class="form-group">
+            <label for="mensaje">Clasificación:</label>
+            <input type="text" class="form-control" name="clasificacion" id="mensaje" placeholder="Clasificación">
+          </div>
+          <!---->
+          <div class="form-group">
+            <label for="mensaje">Observación:</label>
+            <input type="text" class="form-control" name="observacion" id="mensaje" placeholder="Observación">
+          </div>
+          <!---->
+          <div class="form-group">
+            <label for="mensaje">Donante:</label>
+            <input type="text" class="form-control" name="donante" id="mensaje" placeholder="Donante">
+          </div>
+          <!---->
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+    </div>
   </div>
-
-  
-  <div class="col-sm-6 mb-3">
-    <label for="fecha" class="form-label">* fecha ingreso</label>
-    <input type="date" class="form-control" name="fecha_ingreso" id="fecha_ingreso" placeholder="Ingresa fecha de alta de pieza" required>
-  </div>
-
-  <div  class="col-sm-6 mb-3">
-  <label for="clasificación" class="form-label"> *clasificación</label>
- <select name="clasificación" class="form-control" >
- <option>Arqueologia</option>
- <option>Historia</option>
- <option>Arte</option>
- <option>Ciencia y Tecnologia</option>
- <option>animales</option>
- </select>
 </div>
 
-
-<div  class="col-sm-6 mb-3">
-  <label for="entrega" class="form-label"> *tipo de entrega</label>
- <select name="entrega" class="form-control" >
- <option>donado</option>
- <option>adquirido</option>
- </select>
-</div>
-
-<div  class="col-sm-6 mb-3">
-  <label for="Estado" class="form-label"> *Estado</label>
- <select name="Estado" class="form-control" >
-
- <option>Nuevo</option>
- <option>Algo Desgastado</option>
- <option>Desgastado</option>
- <option>Muy Desgastado</option>
- <option>Roto</option>
- </select>
-</div>
-
-
-  <div class="col-sm-6 mb-3">
-    <label for="existencia" class="form-label"> *cantidad</label>
-    <input type="number" class="form-control" name="cantidad" id="cantidad" placeholder="Ingresa cantidad" >
-  </div>
-
- <div class="col-sm-6 mb-3">
- 
-    <label for="nombre" class="form-label">*Observacion de los detalles</label>
-    <input type="text" class="form-control" name="Observacion" id="Observacion" placeholder="Imperfecciones o particularidades de la pieza" required>
-  </div>
-
-  <div class="col-sm-6 mb-3">
- 
-    <label for="nombre" class="form-label">*Descripción</label>
-    <input type="text" class="form-control" name="Descripción" id="Descripción" placeholder="Descripción destinada a muestreo" required>
-  </div>
-  <!--
-
-  <div class="col-sm-6 mb-3">
-    <label for="imagen">insertar imagen </label>
-  <input type="file" name="archivoimagen" id="archivoimagen" class="btn btn-primary btn-sm">
-  </div>s
-  -->
-
-    
-  <div class="col-12 text-center">
-  <button type="submit" class="btn btn-primary btn-sm" name="btn_agregar" id="btn_agregar">Agregar</button>
-  <a class="btn btn-primary btn-sm ms-2" href="listado.php" role="button">Cancelar</a>
-  </div>
-  
-  </form>
-   
-    
-  <?php
-    
-    // Uso de GET para mostrar Mensaje resultante 
-
-    if (isset($_GET["mensaje"])){
-
-    	 if($_GET["mensaje"]!="ok"){
-
-         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-danger' role='alert'><strong>".$_GET["mensaje"]."</strong></div></div>"; 
-         
-       }else{
-
-                 
-        echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>Producto exitosamente agregado!</strong><a href='listado.php' class='text-primary ms-3'>Volver al Listado</a></div></div>";  
-       
-       }  
-  } 
-  ?> 
-  
-
-
-
-  </section>
-
-   
-   <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Scripts de Bootstrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
-
 </html>

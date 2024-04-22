@@ -1,5 +1,4 @@
 <?php
-
 require_once 'BD/conexion.php';
 $sql="SELECT * FROM `pieza`,donante WHERE Donante_idDonante = donante.idDonante";
 $result=mysqli_query($conex,$sql);
