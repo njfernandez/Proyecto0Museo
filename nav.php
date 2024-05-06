@@ -38,6 +38,9 @@ if (!$autenticado) {
         <li class="nav-item">
           <a class="nav-link" href="./administrador.php">Usuarios</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./donantes.php">Donantes</a>
+        </li>
       </ul>
 
       <ul class="navbar-nav">
@@ -48,7 +51,7 @@ if (!$autenticado) {
 
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="./users/salir.php">Salir</a>
+        <a class="nav-link" href="./salir.php">Salir</a>
         </li>
 
         

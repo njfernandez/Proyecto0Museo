@@ -40,45 +40,27 @@
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <div class="form-container">
-          <h2 class="text-center mb-4">Formulario de registro</h2>
-          <form action="./registro.php" method="post">
+          <h2 class="text-center mb-4">Formulario de registro de donante</h2>
+          <form action="./agregarDonante.php" method="post">
+
             <div class="mb-3">
-              <label for="nombre" class="form-label">Dni:</label>
-              <input type="text" class="form-control" id="dni" name="dni" required>
-            </div>
-            <div class="mb-3">
-              <label for="nombre" class="form-label">Nombre:</label>
+              <label for="nombre" class="form-label">Nombre del donante:</label>
               <input type="text" class="form-control" id="nombre" name="nombre" required>
             </div>
             <div class="mb-3">
-              <label for="apellido" class="form-label">Apellido:</label>
+              <label for="apellido" class="form-label">Apellido del donante:</label>
               <input type="text" class="form-control" id="apellido" name="apellido" required>
             </div>
+            
             <div class="mb-3">
-              <label for="email" class="form-label">Email:</label>
-              <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="mb-3">
-              <label for="fecha" class="form-label">Fecha de Nacimiento:</label>
+              <label for="fecha" class="form-label">Fecha de ingreso del donante:</label>
               <input type="date" class="form-control" id="fecha" name="fecha" required>
-            </div>
-            <div class="mb-3">
-              <label for="apellido" class="form-label">Clave:</label>
-              <input type="password" class="form-control" id="clave" name="clave" required>
-            </div>
-            <div class="mb-3">
-              <label for="tipo_usuario" class="form-label">Tipo de Usuario:</label>
-              <select class="form-select" id="tipo" name="tipo" required>
-                <option value="">Seleccionar</option>
-                <option disabled value="administrador">Administrador</option>
-                <option value="gerente">Gerente</option>
-              </select>
             </div>
             <div class="text-center">
               <button type="submit" class="btn btn-primary">Enviar</button>
-            </div>
+            </div>  
           </form>
-
+      
         </div>
       </div>
     </div>

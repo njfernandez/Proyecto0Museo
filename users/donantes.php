@@ -1,6 +1,6 @@
 <?php 
 require_once '../conexion.php';
-$sql="SELECT * FROM usuario";
+$sql="SELECT * FROM donante";
 $result=mysqli_query($conex,$sql);
 ?>
 <!DOCTYPE html>
@@ -21,45 +21,36 @@ include '../nav.php';
 <div class="container">
 <h2 class="mt-5 mb-4">Datos de la Base de Datos </h2>  
 
-        <form class="" action="./form_agregar.php" method="post">
-		          <button class="btn border btn-outline-success btn-sm" type="submit" name="btnAgregar" id="btnAgregar">Agregar Usuario</button>
+        <form class="" action="./donanteAdd.php" method="post">
+		          <button class="btn border btn-outline-success btn-sm" type="submit" name="btnAgregar" id="btnAgregar">Agregar donante</button>
                 </form>
 
 
 
     <div class="table-responsive">
 
-        <table class=" table table-bordered  datatable-table">
+        <table class="table table-bordered datatable-table">
         <div class="row ">    
             <thead>
             <tr>
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 1.30835734870317%;">
-                    <a href="#" class="datatable">ID</a>
+                    <a href="#" class="datatable">ID </a>
                 </th>
-                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 1.30835734870317%;">
-                    <a href="#" class="datatable">DNI</a>
-                </th>
+
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 1.30835734870317%;">
                     <a href="#" class="datatable">nombre</a>
                 </th>
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 1.30835734870317%;">
                     <a href="#" class="datatable">apellido</a>
                 </th>
+
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 1.30835734870317%;">
-                    <a href="#" class="datatable">email</a>
+                    <a href="#" class="datatable">fecha</a>
                 </th>
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 1.30835734870317%;">
-                    <a href="#" class="datatable">clave</a>
+                    <a href="#" class="datatable">acciones</a>
                 </th>
-                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 1.30835734870317%;">
-                    <a href="#" class="datatable">fecha_alta</a>
-                </th>
-                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 1.30835734870317%;">
-                    <a href="#" class="datatable">tipo</a>
-                </th>
-                <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 1.30835734870317%;">
-                    <a href="#" class="datatable">Accion</a>
-                </th>
+
             </thead>
             <?php
                if (mysqli_num_rows($result)>0){
@@ -71,17 +62,14 @@ include '../nav.php';
             ?>
                <tr>
                     
-               <th scope="row"><?php echo $fila["idUsuario"]; ?></th>
-               <td><?php echo $fila["dni"]; ?></td>
+               <th scope="row"><?php echo $fila["idDonante"]; ?></th>
                <td><?php echo $fila["nombre"]; ?></td>
                <td><?php echo $fila["apellido"]; ?></td>
-               <td><?php echo $fila["email"]; ?></td>
-               <td><?php echo $fila["clave"]; ?></td>
-               <td><?php echo $fila["fecha_alta"]; ?></td>
-               <td><?php echo $fila["tipo"]; ?></td>
+               <td><?php echo $fila["fecha"]; ?></td>
+
                <td>
                <div class="d-sm-inline-block">
-                <form action="formEditarPieza.php" method="post">
+                <form action="./donanteEdit.php" method="post">
 		          <input type="hidden" name="id" value="<?php echo $fila["idUsuario"]; ?>">
 		          <button class="btn border btn-outline-success btn-sm" type="submit" name="btneditar" id="btneditar">Editar</button>
                 </form>
@@ -91,12 +79,7 @@ include '../nav.php';
 		          <button class="btn border btn-outline-danger btn-sm" type="submit" name="btnborrar" id="btnborrar">Borrar</button>
                 </form>
             </div>
-            <div class="d-sm-inline-block">
-                <form action="detalles.php" method="post">
-		          <input type="hidden" name="id" value="<?php echo $fila["idUsuario"]; ?>">
-		          <button class="btn border btn-outline-info btn-sm" type="submit" name="btndetalles" id="btndetalles">Detalles</button>
-                </form>
-                </div>
+            
         </td>
                
                </tr>
