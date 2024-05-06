@@ -70,12 +70,12 @@ include '../nav.php';
                <td>
                <div class="d-sm-inline-block">
                 <form action="./donanteEdit.php" method="post">
-		          <input type="hidden" name="id" value="<?php echo $fila["idUsuario"]; ?>">
+		          <input type="hidden" name="id" value="<?php echo $fila["idDonante"]; ?>">
 		          <button class="btn border btn-outline-success btn-sm" type="submit" name="btneditar" id="btneditar">Editar</button>
                 </form>
                 </div>
-               <div class="d-sm-inline-block"><form action="formEliminarPieza.php" method="post">
-		          <input type="hidden" name="id" value="<?php echo $fila["idUsuario"]; ?>">
+               <div class="d-sm-inline-block"><form action="./eliminarDonante.php" method="post">
+		          <input type="hidden" name="id" value="<?php echo $fila["idDonante"]; ?>">
 		          <button class="btn border btn-outline-danger btn-sm" type="submit" name="btnborrar" id="btnborrar">Borrar</button>
                 </form>
             </div>
@@ -90,7 +90,10 @@ include '../nav.php';
             
             </tbody>
       
-       </table></div></div></div>
+       </table>
+    </div>
+</div>
+</div>
 
       
         
@@ -107,11 +110,12 @@ include '../nav.php';
                     </div>
                 </div>
             </div>
+            
     </main>
         <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                            <div class="text-muted">Copyright &copy; Your Website 2024</div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;
