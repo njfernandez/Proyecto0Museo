@@ -27,8 +27,6 @@ include '../nav.php';
                 <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Tabla de piezas</h1>
-        
-                       
                         <div class="card mb-4">
                             <div class="card-body">
                                 Solo las cuentas autorizadas a pueden acceder a este apartado y modificar las piezas
@@ -46,20 +44,31 @@ include '../nav.php';
 
 </div>
         <table class="datatable-table">
+
+           <h3>Categoria</h3>
+            <div class="form-group">
+              <select class="form-control" id="opciones">
+              <option style="color: black;" value = "arqueologia">arqueologia </option>
+              <option style="color: #555;" value = "botanica">botanica </option>
+              <option style="color: black;" value = "geologia"> geologia</option>
+              <option style="color: #555;" value = "ictiologia"> ictiologia</option>
+              <option style="color: black;" value = "octologia"> octologia</option>
+              <option style="color: #555;" value = "osteologia"> osteologia</option>
+              <option style="color: black;" value = "paleontologia">paleontologia </option>
+              <option style="color: #555;" value = "zoologia"> zoologia</option>
+              </select>
+            </div>
+            <h3>Buscador en Tiempo Real</h3>
+            <input type="text" id="busqueda" placeholder="Buscar por nombre">
+            <div id="resultados"></div>
+
         <div class="row ">
             <div class="col-9"
             ></div>
 
-        
-             </div>
-
-         
-           
-             
+             </div>   
             <thead>
-
             <tr>
-
 
                 <th data-sortable="true" aria-sort="ascending" class="datatable" style="width: 19.30835734870317%;">
                     <a href="#" class="datatable">ID</a>
@@ -166,6 +175,7 @@ include '../nav.php';
                             </div>
                         </div>
                     </div>
+      
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">

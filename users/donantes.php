@@ -68,17 +68,17 @@ include '../nav.php';
                <td><?php echo $fila["fecha"]; ?></td>
 
                <td>
-               <div class="d-sm-inline-block">
-                <form action="./donanteEdit.php" method="post">
-		          <input type="hidden" name="id" value="<?php echo $fila["idDonante"]; ?>">
+
+                <form action="donanteEdit.php" method="post">
+		          <input type="hidden" name="idDonante" value="<?php echo $fila["idDonante"]; ?>">
 		          <button class="btn border btn-outline-success btn-sm" type="submit" name="btneditar" id="btneditar">Editar</button>
                 </form>
-                </div>
-               <div class="d-sm-inline-block"><form action="./eliminarDonante.php" method="post">
-		          <input type="hidden" name="id" value="<?php echo $fila["idDonante"]; ?>">
+
+                <form action="eliminarDonante.php" method="post">
+		          <input type="hidden" name="idDonante" value="<?php echo $fila["idDonante"]; ?>">
 		          <button class="btn border btn-outline-danger btn-sm" type="submit" name="btnborrar" id="btnborrar">Borrar</button>
                 </form>
-            </div>
+
             
         </td>
                
