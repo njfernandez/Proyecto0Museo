@@ -42,13 +42,11 @@ include '../nav.php';
 
 <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
 
-</div>
-        <table class="datatable-table">
-
-           <h3>Categoria</h3>
-            <div class="form-group">
-              <select class="form-control" id="opciones">
-              <option style="color: black;" value = "arqueologia">arqueologia </option>
+<h3>Categoria</h3>
+<form action="procesar.php">
+     <div class="form-group">
+              <select class="form-control" id="opciones" name="opciones">
+              <option style="color: black;"  value = "arqueologia">arqueologia </option>
               <option style="color: #555;" value = "botanica">botanica </option>
               <option style="color: black;" value = "geologia"> geologia</option>
               <option style="color: #555;" value = "ictiologia"> ictiologia</option>
@@ -56,11 +54,16 @@ include '../nav.php';
               <option style="color: #555;" value = "osteologia"> osteologia</option>
               <option style="color: black;" value = "paleontologia">paleontologia </option>
               <option style="color: #555;" value = "zoologia"> zoologia</option>
+		    <input type="hidden" name="">
+            <button type="submit">Enviar</button>
               </select>
             </div>
+</form>
             <h3>Buscador en Tiempo Real</h3>
             <input type="text" id="busqueda" placeholder="Buscar por nombre">
             <div id="resultados"></div>
+</div>
+        <table class="datatable-table">
 
         <div class="row ">
             <div class="col-9"
@@ -195,5 +198,19 @@ include '../nav.php';
         <script src="js/scripts.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        <script>
+        function enviarOpcion() {
+            var opcionSeleccionada = document.getElementById("opciones").value;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "listado.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("resultado").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send("opcion=" + opcionSeleccionada);
+        }
+    </script>
     </body>
 </html>
