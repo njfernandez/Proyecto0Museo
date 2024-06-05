@@ -30,7 +30,7 @@ include '../nav.php';
                         <div class="card mb-4">
                             <div class="card-body">
                                 Solo las cuentas autorizadas a pueden acceder a este apartado y modificar las piezas
-                                <a class="btn btn-primary btn-sm mb-2" href="formAgregarPieza.php" role="button">Agregar</a>
+                                <a class="btn btn-primary btn-sm mb-2" href="../piezas/formAgregarPieza.php" role="button">Agregar</a>
                                 .
                             </div>
                         </div>

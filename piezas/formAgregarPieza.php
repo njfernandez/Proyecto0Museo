@@ -1,3 +1,32 @@
+<?php
+require_once '../conexion.php';
+$sql = "SELECT idDonante , nombre FROM donante";
+$result=mysqli_query($conex,$sql);
+// Formatea los resultados como un array JSON
+$donantes = array();
+$fila = $result->fetch_assoc();
+if ($result->num_rows > 0) {
+    while($fila = $result->fetch_assoc()) {
+        $donantes[] = $fila;
+    }
+}
+// Devuelve los datos como JSON
+if ($result->num_rows > 0) {
+  // Comienza el select
+  echo '<select class="form-control" id="donante" name="donante">';
+  echo '<option value="">Selecciona un donante</option>';
+  
+  // Genera las opciones con un bucle foreach
+  while($fila = $result->fetch_assoc()) {
+      echo '<option value="' . $fila["id"] . '">' . $fila["nombre"] . '</option>';
+  }
+  
+  // Cierra el select
+  echo '</select>';
+} else {
+  echo "No se encontraron donantes.";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,7 +103,7 @@ background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, F
           <!---->
           <div class="form-group">
             <label for="mensaje">Fecha de ingreso:</label>
-            <input type="text" class="form-control" name="fecha" id="mensaje" placeholder="Fecha">
+            <input type="date" class="form-control" name="fecha" id="mensaje" placeholder="Fecha">
           </div>
           <!---->
           <div class="form-group">
@@ -93,8 +122,10 @@ background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, F
           </div>
           <!---->
           <div class="form-group">
-            <label for="mensaje">Donante:</label>
-            <input type="text" class="form-control" name="donante" id="mensaje" placeholder="Donante">
+            <label for="donante">Donante:</label>
+            <select class="form-control" id="donante" name="donante">
+              <option value="">Selecciona un donante</option>
+            </select>
           </div>
           <!---->
           <button type="submit" class="btn btn-primary">Enviar</button>
@@ -103,8 +134,67 @@ background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, F
     </div>
   </div>
 </div>
+<script>
+// Hacer una solicitud AJAX para obtener los donantes
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
 
-<!-- Scripts de Bootstrap -->
+    var donantes = JSON.parse(this.responseText);
+    var selectDonantes = document.getElementById("donante");
+    // Agregar las opciones al select
+    donantes.forEach(function(donante) {
+      var option = document.createElement("option");
+      option.value = donante.id;
+      option.text = donante.nombre;
+      selectDonantes.appendChild(option);
+    });
+
+};
+xhttp.open("GET", "obtener_donantes.php", true);
+xhttp.send();
+</script>
+<script>
+  document.getElementById('btnAgregar').addEventListener('click', function() {
+    var select = document.getElementById('formularioSelect');
+    var option = document.createElement('option');
+    option.value = 'crear';
+    option.textContent = 'Crear Formulario';
+    select.appendChild(option);
+  });
+  
+  document.getElementById('formularioSelect').addEventListener('change', function() {
+    var selectValue = this.value;
+    var formularioContainer = document.getElementById('formularioContainer');
+  
+    if (selectValue === 'crear') {
+      formularioContainer.innerHTML = `
+        <form id="miFormulario">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre"><br><br>
+          
+          <label for="apellido">Apellido:</label>
+          <input type="text" id="apellido" name="apellido"><br><br>
+          
+          <label for="fecha">Fecha de hoy:</label>
+          <input type="text" id="fecha" name="fecha" value="${obtenerFechaHoy()}" readonly><br><br>
+          
+          <button type="submit">Enviar</button>
+        </form>
+      `;
+    } else {
+      formularioContainer.innerHTML = '';
+    }
+  });
+  
+  function obtenerFechaHoy() {
+    var hoy = new Date();
+    var dd = String(hoy.getDate()).padStart(2, '0');
+    var mm = String(hoy.getMonth() + 1).padStart(2, '0');
+    var yyyy = hoy.getFullYear();
+    return dd + '/' + mm + '/' + yyyy;
+  }
+  </script>
+  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
